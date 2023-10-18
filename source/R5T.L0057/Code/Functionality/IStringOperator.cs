@@ -6,10 +6,10 @@ using R5T.T0132;
 namespace R5T.L0057
 {
     [FunctionalityMarker]
-    public partial interface IStringOperator : IFunctionalityMarker
+    public partial interface IStringOperator : IFunctionalityMarker,
+        // Is-a instead of has-a since all the string inputs are platform types.
+        L0053.IStringOperator
     {
-#pragma warning disable IDE1006 // Naming Styles
-        public L0053.IStringOperator _Platform => L0053.StringOperator.Instance;
-#pragma warning restore IDE1006 // Naming Styles
+
     }
 }
