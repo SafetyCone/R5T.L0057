@@ -1,10 +1,9 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
+using R5T.L0066.Extensions;
 using R5T.N0000;
 using R5T.T0132;
-using R5T.T0172;
 using R5T.T0172.Extensions;
 using R5T.T0180;
 
@@ -35,7 +34,7 @@ namespace R5T.L0057
 
             var pairedFilePaths = documentationXmlFilePathsByAssemblyFilePath
                 .Where(x => documentationXmlFilePathsHash.Contains(x.Value))
-                .ToDictionary();
+                .To_Dictionary();
 
             var unpairedAssemblyFilePaths = documentationXmlFilePathsByAssemblyFilePath
                 .Where(x => !documentationXmlFilePathsHash.Contains(x.Value))
